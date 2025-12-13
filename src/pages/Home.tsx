@@ -1,5 +1,6 @@
 // src/paginas/Home.tsx
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { db } from "../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 import { getDriveImage } from "../utils/getDriveImage";
@@ -459,12 +460,13 @@ const NivelCard: React.FC<NivelCardProps> = ({
           {desc}
         </p>
 
-        <a
-          href={link}
+        {/* LINK CORRECTO */}
+        <Link
+          to={link}
           className="inline-flex items-center justify-center mt-8 px-7 py-3 rounded-full bg-blue-700 text-white font-semibold shadow-md hover:bg-blue-800 transition"
         >
           Ver más
-        </a>
+        </Link>
       </div>
     </article>
   );
