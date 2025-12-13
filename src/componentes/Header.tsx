@@ -27,7 +27,7 @@ const Header: React.FC = () => {
         {/* LOGO */}
         <Link to="/" className="flex items-center gap-3">
           <img
-            src="/logo-catolica.jpg"
+            src="/icons/logo-catolica.jpg"
             alt="La Católica GEM"
             className="w-11 h-11 object-contain"
           />
