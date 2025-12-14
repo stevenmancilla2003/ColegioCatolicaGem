@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 import { getDriveImage } from "../utils/getDriveImage";
+import { Sun, BookOpen, Sparkles } from "lucide-react";
 
 /* ----------------------------- TIPOS ---------------------------------- */
 
@@ -39,7 +40,6 @@ const Vacacional: React.FC = () => {
       <main className="max-w-7xl mx-auto px-6 pb-20 relative z-10">
         <DescripcionVacacional />
         <VacacionalCinematica getImageUrl={getImageUrl} />
-        {/* <VideosVacacional /> */}
       </main>
     </div>
   );
@@ -47,7 +47,7 @@ const Vacacional: React.FC = () => {
 
 export default Vacacional;
 
-/* ----------------------------- HERO VACACIONAL – FRANJA ----------------------------- */
+/* ----------------------------- HERO VACACIONAL ----------------------------- */
 
 interface HeroProps {
   getImageUrl: GetImageUrl;
@@ -57,15 +57,7 @@ const HeroVacacional: React.FC<HeroProps> = ({ getImageUrl }) => {
   const bgImage = getImageUrl("vacacionalBanner");
 
   return (
-    <section
-      className="
-        relative w-screen
-        left-1/2 right-1/2
-        -ml-[50vw] -mr-[50vw]
-        overflow-hidden
-      "
-    >
-      {/* IMAGEN DE FONDO */}
+    <section className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
       {bgImage && (
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -73,23 +65,17 @@ const HeroVacacional: React.FC<HeroProps> = ({ getImageUrl }) => {
         />
       )}
 
-      {/* OVERLAY */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#02153A]/95 via-[#032B66]/90 to-[#063B88]/85" />
 
-      {/* CONTENIDO */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-28 grid md:grid-cols-2 gap-16 items-center text-white">
-
-        {/* TEXTO */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-28 grid md:grid-cols-2 gap-16 text-white">
         <div>
-          {/* Badge */}
           <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/20 text-sm font-semibold mb-6">
             🌞 Ciclo Vacacional 2026
           </span>
 
           <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight">
             Nivelación y{" "}
-            <span className="text-[#F6C200]">Preparación</span>{" "}
-            de Verano
+            <span className="text-[#F6C200]">Preparación</span> de Verano
           </h1>
 
           <p className="mt-6 text-white/90 text-lg leading-relaxed max-w-xl">
@@ -98,36 +84,27 @@ const HeroVacacional: React.FC<HeroProps> = ({ getImageUrl }) => {
             en un ambiente seguro y motivador.
           </p>
 
-          <ul className="mt-8 space-y-3 text-white/95 text-base">
-            <li className="flex gap-3 items-start">
+          <ul className="mt-8 space-y-3 text-white/95">
+            <li className="flex gap-3">
               <span className="text-[#F6C200] font-bold">✔</span>
               Inicio: <strong>05 de enero 2026</strong>
             </li>
-            <li className="flex gap-3 items-start">
+            <li className="flex gap-3">
               <span className="text-[#F6C200] font-bold">✔</span>
               Duración: <strong>6 semanas completas</strong>
             </li>
-            <li className="flex gap-3 items-start">
+            <li className="flex gap-3">
               <span className="text-[#F6C200] font-bold">✔</span>
-              Programas para Inicial, Primaria, Secundaria y Preuniversitario
+              Inicial, Primaria, Secundaria y Preuniversitario
             </li>
           </ul>
 
-          {/* Línea decorativa */}
           <div className="mt-8 h-1 w-24 rounded-full bg-[#F6C200]" />
         </div>
-
-        {/* BLOQUE DERECHO (vacío para respiración visual) */}
-        <div className="hidden md:block" />
       </div>
 
-      {/* ONDA INFERIOR */}
-      <div className="absolute inset-x-0 bottom-0 translate-y-[1px]">
-        <svg
-          viewBox="0 0 1440 160"
-          className="w-full h-32"
-          preserveAspectRatio="none"
-        >
+      <div className="absolute inset-x-0 bottom-0">
+        <svg viewBox="0 0 1440 160" className="w-full h-32" preserveAspectRatio="none">
           <path
             fill="#E8F1FF"
             d="M0,96L80,101C160,107,320,117,480,117C640,117,800,107,960,96C1120,85,1280,75,1440,64L1440,160L0,160Z"
@@ -140,15 +117,12 @@ const HeroVacacional: React.FC<HeroProps> = ({ getImageUrl }) => {
 
 /* ---------------------------- DESCRIPCIÓN GENERAL ---------------------------- */
 
-import { Sun, BookOpen, Sparkles } from "lucide-react";
-
 const DescripcionVacacional = () => (
-  <section className="mt-24">
-    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+  <section className="relative pt-12 pb-24">
+    <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-start">
 
       {/* CONTENIDO */}
       <div>
-        {/* Ícono / badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F6C200]/15 text-[#B38B00] text-sm font-semibold mb-6">
           <Sun className="w-4 h-4" />
           Experiencia vacacional formativa
@@ -161,52 +135,66 @@ const DescripcionVacacional = () => (
 
         <p className="mt-6 text-gray-600 text-lg leading-relaxed max-w-xl">
           Nuestro Ciclo Vacacional combina <strong>reforzamiento académico</strong> con
-          actividades deportivas, culturales, tecnológicas y artísticas, diseñadas
-          para mantener a los estudiantes activos, motivados y en constante aprendizaje.
+          actividades deportivas, culturales, tecnológicas y artísticas.
         </p>
 
-        <p className="mt-4 text-gray-600 text-lg leading-relaxed max-w-xl">
+        {/* FEATURES – RESPONSIVE CORREGIDO */}
+        <div className="mt-8 grid gap-4 sm:grid-cols-1 md:grid-cols-2 max-w-xl">
+          <Feature
+            icon={<BookOpen className="w-6 h-6 text-[#F6C200]" />}
+            text="Refuerzo académico planificado y adaptado por nivel educativo."
+          />
+          <Feature
+            icon={<Sparkles className="w-6 h-6 text-[#F6C200]" />}
+            text="Actividades que estimulan la creatividad y el trabajo en equipo."
+          />
+          <Feature
+            icon={<Sun className="w-6 h-6 text-[#F6C200]" />}
+            text="Un entorno seguro y motivador que mantiene el interés por aprender."
+          />
+        </div>
+
+        <p className="mt-8 text-gray-600 text-lg leading-relaxed max-w-xl">
           Es un espacio ideal para <strong>fortalecer conocimientos</strong>, descubrir
           nuevas habilidades y prepararse con seguridad para el siguiente año académico.
         </p>
 
-        {/* Mini features */}
-        <div className="mt-8 space-y-4">
-          <div className="flex gap-4 items-start">
-            <BookOpen className="w-6 h-6 text-[#F6C200] mt-1" />
-            <p className="text-gray-700 text-base">
-              Refuerzo académico planificado y adaptado por nivel educativo.
-            </p>
-          </div>
-
-          <div className="flex gap-4 items-start">
-            <Sparkles className="w-6 h-6 text-[#F6C200] mt-1" />
-            <p className="text-gray-700 text-base">
-              Actividades que estimulan la creatividad, el trabajo en equipo y la confianza.
-            </p>
-          </div>
-        </div>
-
-        {/* Línea decorativa */}
         <div className="mt-8 h-1 w-24 rounded-full bg-[#F6C200]" />
       </div>
 
-      {/* BLOQUE VISUAL SUAVE */}
-      <div className="hidden md:block">
-        <div className="relative rounded-3xl bg-white shadow-xl p-10">
-          <p className="text-[#1E3A8A] font-semibold text-lg leading-relaxed">
-            “El verano es el mejor momento para reforzar, descubrir y crecer,
-            sin la presión del año escolar.”
-          </p>
-
-          <p className="mt-4 text-sm text-gray-500">
-            — Enfoque pedagógico La Católica GEM
-          </p>
-        </div>
+      {/* CITA */}
+      <div className="flex justify-center md:justify-end">
+        <QuoteCard />
       </div>
-
     </div>
   </section>
+);
+
+/* ---------------------------- SUBCOMPONENTES ---------------------------- */
+
+const Feature = ({
+  icon,
+  text,
+}: {
+  icon: React.ReactNode;
+  text: string;
+}) => (
+  <div className="flex gap-4 items-start bg-white/95 rounded-xl p-4 shadow-sm border-l-4 border-[#F6C200]">
+    <div className="mt-1 flex-shrink-0">{icon}</div>
+    <p className="text-gray-700 text-base leading-relaxed">{text}</p>
+  </div>
+);
+
+const QuoteCard = () => (
+  <div className="relative rounded-3xl bg-white shadow-xl p-10 max-w-md">
+    <p className="text-[#1E3A8A] font-semibold text-lg leading-relaxed">
+      “El verano es el mejor momento para reforzar, descubrir y crecer,
+      sin la presión del año escolar.”
+    </p>
+    <p className="mt-4 text-sm text-gray-500">
+      — Enfoque pedagógico La Católica GEM
+    </p>
+  </div>
 );
 
 /* ---------------------- VACACIONAL – FRANJA CINEMÁTICA INTEGRAL ---------------------- */

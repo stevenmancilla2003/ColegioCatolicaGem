@@ -19,12 +19,19 @@ const Footer: React.FC = () => {
       </div>
 
       {/* CONTENIDO */}
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 relative z-10">
+      <div className="
+        max-w-7xl mx-auto px-6
+        grid gap-14
+        md:grid-cols-3
+        relative z-10
+      ">
 
-        {/* COLUMNA 1 */}
-        <div>
-          <h3 className="font-extrabold text-xl mb-4">
-            Colegio y Academia <br /> La Católica GEM
+        {/* ================= COLUMNA 1 ================= */}
+        <div className="order-1">
+          <h3 className="font-extrabold text-xl mb-4 leading-tight">
+            Colegio
+            <br />
+            La Católica GEM
           </h3>
 
           <p className="text-sm text-white/90 leading-relaxed max-w-sm">
@@ -32,7 +39,7 @@ const Footer: React.FC = () => {
             académica. Orgullo educativo de Pilcomayo.
           </p>
 
-          {/* BADGES INSTITUCIONALES */}
+          {/* BADGES */}
           <div className="flex flex-wrap gap-2 mt-5">
             <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-medium">
               🎓 Educación Integral
@@ -43,9 +50,11 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* COLUMNA 2 */}
-        <div>
-          <h4 className="font-semibold text-lg mb-4">Contáctanos</h4>
+        {/* ================= COLUMNA 2 ================= */}
+        <div className="order-2 md:order-2">
+          <h4 className="font-semibold text-lg mb-4">
+            Contáctanos
+          </h4>
 
           <p className="text-sm text-white/90">
             📍 Jr. Simón Bolívar N° 150 – Pilcomayo
@@ -54,33 +63,48 @@ const Footer: React.FC = () => {
             📍 Cruce de Sicaya y Chupaca
           </p>
 
-          {/* BADGES DE CONTACTO */}
-          <div className="flex flex-wrap gap-3 mt-5">
+          {/* CONTACTOS */}
+          <div className="mt-6 space-y-3">
 
-            {/* WhatsApp */}
+            {/* WhatsApp principal */}
             <a
               href="https://api.whatsapp.com/send?phone=51960119354"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#25D366] text-[#02153A] font-semibold text-sm shadow-md hover:shadow-lg hover:brightness-110 transition"
+              className="
+                flex items-center justify-center gap-2
+                w-full
+                px-5 py-3
+                rounded-full
+                bg-[#25D366]
+                text-[#02153A]
+                font-semibold
+                text-sm
+                shadow-md
+                hover:shadow-lg hover:brightness-110
+                transition
+              "
             >
               💬 WhatsApp
             </a>
 
             {/* Teléfonos */}
-            <span className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
-              📞 960 119 354
-            </span>
-
-            <span className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
-              📞 943 794 727
-            </span>
+            <div className="flex gap-3 flex-wrap">
+              <span className="flex-1 text-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                📞 960 119 354
+              </span>
+              <span className="flex-1 text-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
+                📞 943 794 727
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* COLUMNA 3 */}
-        <div>
-          <h4 className="font-semibold text-lg mb-4">Enlaces rápidos</h4>
+        {/* ================= COLUMNA 3 ================= */}
+        <div className="order-3 md:order-3">
+          <h4 className="font-semibold text-lg mb-4">
+            Enlaces rápidos
+          </h4>
 
           <ul className="space-y-2 text-sm">
             {[
@@ -93,7 +117,12 @@ const Footer: React.FC = () => {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="inline-flex items-center gap-2 text-white/90 hover:text-[#F6C200] transition"
+                  className="
+                    inline-flex items-center gap-2
+                    text-white/90
+                    hover:text-[#F6C200]
+                    transition
+                  "
                 >
                   → {item.label}
                 </a>
@@ -104,7 +133,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* COPYRIGHT */}
-      <p className="text-center mt-12 text-xs text-white/70 relative z-10">
+      <p className="text-center mt-14 text-xs text-white/70 relative z-10 px-4">
         © 2026 La Católica GEM — Todos los derechos reservados
       </p>
     </footer>
