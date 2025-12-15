@@ -80,7 +80,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ getImageUrl }) => {
 
   return (
     <section
-      className="relative text-white overflow-hidden min-h-[750px] flex items-center"
+      className="relative text-white overflow-hidden min-h-[650px] md:min-h-[750px] flex items-center"
       style={{
         backgroundImage: heroSrc ? `url(${heroSrc})` : undefined,
         backgroundSize: "cover",
@@ -92,7 +92,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ getImageUrl }) => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#02153A]/95 via-[#02153A]/85 to-[#02153A]/40" />
 
       {/* Contenido */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col md:grid md:grid-cols-2 gap-12 items-center">
         
         {/* TEXTO IZQUIERDO */}
         <div>
@@ -142,7 +142,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ getImageUrl }) => {
         </div>
 
         {/* FORMULARIO / BLOQUE DERECHO (ESTILO Saco Oliveros) */}
-        <div className="bg-white rounded-3xl shadow-2xl p-8 text-blue-900 max-w-md ml-auto">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 text-blue-900 max-w-md w-full mt-10 md:mt-0 md:ml-auto">
           <h3 className="text-2xl font-extrabold mb-2">
             INFORMES <span className="text-[#F6C200]">2026</span>
           </h3>
