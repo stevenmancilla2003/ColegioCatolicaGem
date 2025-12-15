@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -19,12 +20,14 @@ const Footer: React.FC = () => {
       </div>
 
       {/* CONTENIDO */}
-      <div className="
-        max-w-7xl mx-auto px-6
-        grid gap-14
-        md:grid-cols-3
-        relative z-10
-      ">
+      <div
+        className="
+          max-w-7xl mx-auto px-6
+          grid gap-14
+          md:grid-cols-3
+          relative z-10
+        "
+      >
 
         {/* ================= COLUMNA 1 ================= */}
         <div className="order-1">
@@ -39,7 +42,6 @@ const Footer: React.FC = () => {
             académica. Orgullo educativo de Pilcomayo.
           </p>
 
-          {/* BADGES */}
           <div className="flex flex-wrap gap-2 mt-5">
             <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-medium">
               🎓 Educación Integral
@@ -63,10 +65,9 @@ const Footer: React.FC = () => {
             📍 Cruce de Sicaya y Chupaca
           </p>
 
-          {/* CONTACTOS */}
           <div className="mt-6 space-y-3">
 
-            {/* WhatsApp principal */}
+            {/* WhatsApp (externo, se queda como <a>) */}
             <a
               href="https://api.whatsapp.com/send?phone=51960119354"
               target="_blank"
@@ -88,7 +89,6 @@ const Footer: React.FC = () => {
               💬 WhatsApp
             </a>
 
-            {/* Teléfonos */}
             <div className="flex gap-3 flex-wrap">
               <span className="flex-1 text-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium">
                 📞 960 119 354
@@ -108,15 +108,15 @@ const Footer: React.FC = () => {
 
           <ul className="space-y-2 text-sm">
             {[
-              { label: "Inicio", href: "/" },
-              { label: "Inicial", href: "/inicial" },
-              { label: "Primaria", href: "/primaria" },
-              { label: "Secundaria", href: "/secundaria" },
-              { label: "Vacacional", href: "/ciclo-vacacional" },
+              { label: "Inicio", to: "/" },
+              { label: "Inicial", to: "/inicial" },
+              { label: "Primaria", to: "/primaria" },
+              { label: "Secundaria", to: "/secundaria" },
+              { label: "Vacacional", to: "/ciclo-vacacional" },
             ].map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
+              <li key={item.to}>
+                <Link
+                  to={item.to}
                   className="
                     inline-flex items-center gap-2
                     text-white/90
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
                   "
                 >
                   → {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
